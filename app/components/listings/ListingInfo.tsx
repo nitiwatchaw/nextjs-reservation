@@ -42,7 +42,7 @@ const ListingInfo: React.FC<listingProps> = ({ listing, currentUser }) => {
                 <div className="flex items-center gap-4  ">
                     <div className="font-light text-md text-neutral-400">{listing?.guestCount} guests</div>
                     <div className="font-light text-md text-neutral-400">{listing?.roomCount} rooms</div>
-                    <div className="font-light text-md text-neutral-400">{listing?.bathroomCount} barthrooms</div>
+                    <div className="font-light text-md text-neutral-400">{listing?.bathroomCount} bathrooms</div>
                 </div>
             </div>
 

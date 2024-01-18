@@ -2,26 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    font-size: 10px !important;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.swiper-button-disabled {
+    opacity: 0 !important;
+    pointer-events: none !important;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+    left: -10px !important;
+    right: auto;
+}
+
+.swiper-button-next {
+    right: -9px !important;
+}
+
+.css-hsb525-menu {
+    position: absolute !important;
+    z-index: 3000 !important;
+}
+
+.rdrMonth {
+    width: 100% !important;
+}
+
+.rdrCalendarWrapper {
+    font-size: 16px !important;
+    width: 100% !important;
 }

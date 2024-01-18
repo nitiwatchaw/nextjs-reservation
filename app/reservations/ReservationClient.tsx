@@ -27,6 +27,7 @@ const Reservation: React.FC<ReservationProps> = ({ currentUser, allUser, orderRe
         <div className=" mt-9 flex flex-col gap-6 ">
           {orderReservation?.map((reservation) => (
             <ReservationCard
+              key={reservation.id}
               reservation={reservation}
               currentUser={currentUser}
               allUser={allUser}

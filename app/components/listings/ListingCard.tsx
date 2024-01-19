@@ -36,7 +36,7 @@ const ListingCard: React.FC<ListingCardProps> = async ({ data, currentUser, allU
     }
 
 
-    const userName = getUserName(data.userId);
+    const userName = getUserName(data?.userId);
 
     const updateModal = useUpdateModal()
 
@@ -48,7 +48,7 @@ const ListingCard: React.FC<ListingCardProps> = async ({ data, currentUser, allU
 
 
     return (
-        <div className='relative'>
+        <div className='relative flex flex-col !justify-between'>
             <div className="absolute top-2 right-2 z-50">
                 <ButtonHeart
                     currentUser={currentUser}
@@ -77,7 +77,7 @@ const ListingCard: React.FC<ListingCardProps> = async ({ data, currentUser, allU
                             {data.favoriteUserId.length} Like
                         </div>
                     </div>
-                    <div className="text-neutral-500 text-sm">
+                    <div className="text-neutral-500 text-sm flex-1">
                         {data.description}
                     </div>
                     <div className={`flex !justify-between text-gray-700  flex-1 items-end ${deletebtn && "!items-start"}`}>

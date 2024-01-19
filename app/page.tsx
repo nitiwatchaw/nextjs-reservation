@@ -38,7 +38,7 @@ export default async function Home({ searchParams }: HomeProps) {
           {listings.length} Places Found
         </div>
         <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 3xl:grid-6 gap-8">
-          {listings.map((listing: any) => {
+          {listings?.map((listing: any) => {
             return (
               <Suspense key={listing.id} fallback={<SkeletionSingleLoader />}>
                 <ListingCard

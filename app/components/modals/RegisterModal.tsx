@@ -14,7 +14,6 @@ import ImageProfile from '../input/ImageProfile'
 enum STEPS {
     DATA = 0,
     IMG = 1,
-
 }
 
 const RegisterModal = () => {

@@ -6,6 +6,7 @@ import getReservations from '@/app/action/getReservations'
 import SkeletionLoader2 from '@/app/components/SkeletionLoader2'
 import { Suspense } from 'react'
 import GettingUser from '@/app/action/getUsers'
+import getComment from '@/app/action/getCommet'
 
 interface IParams {
     listingId: string;
@@ -19,6 +20,8 @@ const page = async ({ params }: { params: IParams }) => {
     const reservations = await getReservations(params)
     const allUser = await GettingUser()
 
+    const commentData = await getComment(params)
+
 
     return (
         <div>
@@ -28,6 +31,7 @@ const page = async ({ params }: { params: IParams }) => {
                     currentUser={currentUser}
                     reservations={reservations}
                     allUser={allUser}
+                    commentData={commentData}
                 />
             </Suspense>
 

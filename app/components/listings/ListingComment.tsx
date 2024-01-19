@@ -1,7 +1,10 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { SafeListing, SafeUser } from '../types';
 import Image from 'next/image';
+import axios from 'axios';
+import toast from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 
 
@@ -19,6 +22,25 @@ const ListingComment: React.FC<ListingCommentProps> = ({ listing, currentUser, a
 
     const findCurrentUser = commentData?.find((user: any) => user.userId == currentUser?.id)
 
+    const router = useRouter()
+
+
+    const handleDeleteComment = useCallback((commentId: string) => {
+
+       
+        axios.delete(`/api/comment/${commentId}`)
+            
+            .then(() => {
+                toast.success(`Resevation ${commentId} is cancelled`)
+                router.refresh()
+            })
+            .catch((error) => {
+                toast.error(error?.response?.data?.error)
+                console.log(error)
+
+            })
+    }, [router])
+
 
     return (
         <div className='flex flex-col gap-3'>
@@ -28,7 +50,14 @@ const ListingComment: React.FC<ListingCommentProps> = ({ listing, currentUser, a
             <hr />
             <div className="flex flex-col gap-4 !justify-start ">
                 {commentData?.map((comment: any) => (
-                    <div className={`${comment.user.id === findHost?.userId ? "text-primary" : ""} flex bg-neutral-50 rounded-lg p-3 gap-4`} key={comment.id}>
+                    <div className={`${comment.user.id === findHost?.userId ? "text-primary" : ""} relative flex bg-neutral-50 rounded-lg p-3 gap-4`} key={comment.id}>
+                        {comment.user.id === findCurrentUser?.userId && "(You)" && (
+                            <div
+                                onClick={() => handleDeleteComment(comment?.id)}
+                                className="absolute top-2 right-3 text-neutral-400 text-xs cursor-pointer">
+                                Delete
+                            </div>
+                        )}
                         <div className="flex items-center gap-3 ">
                             <div className="relative w-10 h-10 rounded-full   ">
                                 <Image

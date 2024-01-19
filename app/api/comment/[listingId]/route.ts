@@ -4,7 +4,8 @@ import prisma from '@/app/libs/prismadb'
 
 
 interface IParams {
-    listingId: string; // Change from string | undefined to string
+    listingId: string;
+    commentId: string;
 }
 
 export async function POST(request: Request, { params }: { params: IParams }) {
@@ -32,5 +33,33 @@ export async function POST(request: Request, { params }: { params: IParams }) {
 
     return NextResponse.json(addComment);
 
+
+}
+
+
+
+export async function DELETE(request: Request, { params }: { params: IParams }) {
+    const currentUser = await getCurrentUser();
+
+    if (!currentUser) {
+        return NextResponse.error();
+    }
+
+
+    const { listingId } = params;
+
+
+    try {
+        const delComment = await prisma.comment.delete({
+            where: {
+                id: listingId
+            }
+        });
+
+        return NextResponse.json(delComment);
+    } catch (error) {
+        console.error("Error deleting comment:", error);
+        return NextResponse.error();
+    }
 
 }

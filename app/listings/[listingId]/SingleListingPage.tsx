@@ -33,8 +33,6 @@ interface listingProps {
 const ListingSinglePage: React.FC<listingProps> = ({ listing, currentUser, reservations, allUser, commentData }) => {
 
 
-
-
     const router = useRouter()
 
     const loginModal = useLoginModal()
@@ -218,10 +216,11 @@ const ListingSinglePage: React.FC<listingProps> = ({ listing, currentUser, reser
                             <button
                                 disabled={haveWord}
                                 onClick={onSubmitComment}
-                                className='disabled:bg-neutral-200  w-full h-[40px] bg-primary my-3 text-white rounded-sm disabled:bg-primary/70 disabled:cursor-progress'>
+                                className='disabled:bg-neutral-200  w-full h-[40px] bg-primary my-3 text-white rounded-sm disabled:bg-primary/70'>
                                 Send
                             </button>
                         </div>
+
                         {commentData ? <ListingComment
                             allUser={allUser}
                             currentUser={currentUser}

@@ -1,8 +1,9 @@
 'use client'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { SafeUser } from '../types'
 import useLoginModal from '@/app/hook/useLoginModal'
-
+import { RiMoonClearLine } from "react-icons/ri";
+import { CiCloudSun } from "react-icons/ci";
 
 interface ProfileProps {
     currentUser?: SafeUser | null
@@ -12,9 +13,29 @@ const Profile: React.FC<ProfileProps> = ({ currentUser }) => {
 
 
     const loginModal = useLoginModal()
+
+    const [isDarkmode, setIsDarkmode] = useState(() => {
+        const storedMode = window.localStorage.getItem('reservation-project-Darkmode');
+        return storedMode ? JSON.parse(storedMode) : false;
+    })
+
+
     const handleDarkMode = () => {
-        document.body.classList.toggle('dark')
+        document.body.classList.toggle('dark');
+        setIsDarkmode((prevMode: any) => !prevMode)
     }
+
+    useEffect(() => {
+        window.localStorage.setItem('reservation-project-Darkmode', JSON.stringify(isDarkmode))
+        if (isDarkmode) {
+            document.body.classList.add('dark');
+        }
+    }, [isDarkmode]);
+
+
+
+
+
     return (
         <>
             {
@@ -27,7 +48,9 @@ const Profile: React.FC<ProfileProps> = ({ currentUser }) => {
                             {currentUser?.name}
                         </div>
                         <div className="dark:text-white">
-                            <button onClick={handleDarkMode}>Darkmode</button>
+                            {isDarkmode ? <button onClick={handleDarkMode}><RiMoonClearLine size={25} /></button> :
+                                <button onClick={handleDarkMode}><CiCloudSun size={25} /></button>
+                            }
                         </div>
                     </div> :
 
@@ -37,7 +60,9 @@ const Profile: React.FC<ProfileProps> = ({ currentUser }) => {
                             Login to discover more !
                         </div>
                         <div className="dark:text-white">
-                            <button onClick={handleDarkMode}>Darkmode</button>
+                            {isDarkmode ? <button onClick={handleDarkMode}><RiMoonClearLine size={25} /></button> :
+                                <button onClick={handleDarkMode}><CiCloudSun size={25} /></button>
+                            }
                         </div>
                     </div>
 

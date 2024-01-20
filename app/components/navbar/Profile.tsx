@@ -55,7 +55,7 @@ const Profile: React.FC<ProfileProps> = ({ currentUser }) => {
                     </div> :
 
                     <div
-                        className='flex items-center gap-2 pt-8 pb-2 px-6  border-b-2 border-neutral-200 !justify-end cursor-pointer'>
+                        className='flex items-center gap-2 pt-8 pb-2 px-6  border-b-2 border-neutral-200 !justify-end '>
                         <div className="dark:text-white font-bold hover:bg-neutral-200 rounded-lg px-4 py-2" onClick={() => loginModal.onOpen()}>
                             Login to discover more !
                         </div>

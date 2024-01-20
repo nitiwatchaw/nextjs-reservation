@@ -28,7 +28,7 @@ interface ListingCardProps {
 }
 
 
-const ListingCard: React.FC<ListingCardProps> = async ({ data, currentUser, allUser, deletebtn, onAction, updatebtn }) => {
+const ListingCard: React.FC<ListingCardProps> =  ({ data, currentUser, allUser, deletebtn, onAction, updatebtn }) => {
 
     function getUserName(userId: string): string | null {
         const user = allUser?.find((user: SafeUser) => user.id === userId);

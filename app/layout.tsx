@@ -35,7 +35,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${confotaa.className} min-h-screen  dark:bg-[#333333]`}>
+      <body className={`${confotaa.className} min-h-screen `}>
 
         <div className="dark:bg-primary-dark px-6 min-h-screen">
           <ClientOnly >

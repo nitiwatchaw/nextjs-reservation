@@ -34,7 +34,7 @@ export default async function Home({ searchParams }: HomeProps) {
   return (
     <ClientOnly>
       <Container>
-        <div className="">
+        <div className="dark:text-[#8c91a4]">
           {listings.length} Places Found
         </div>
         <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 3xl:grid-6 gap-8">

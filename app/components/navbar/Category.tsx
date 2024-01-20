@@ -123,6 +123,7 @@ const Category = () => {
 
         <>
             <Swiper
+
                 navigation={true}
                 modules={[Navigation]}
                 slidesPerView={5}
@@ -162,10 +163,10 @@ const Category = () => {
                         slidesPerView: 15,
                     },
                 }}
-                className="h-[80px] border-b-[1px] border-neutral-300">
+                className="h-[80px] border-b-[1px] border-neutral-300  dark:border-bor-dark dark:!text-white ">
                 <Suspense fallback="loading">
                     {categories.map((item, index) => (
-                        <SwiperSlide key={index} className='h-full flex items-center justify-center'>
+                        <SwiperSlide key={index} className='h-full flex items-center justify-center  '>
                             <CategoriesBox
                                 item={item}
                                 setSelect={setSelect}

@@ -57,12 +57,12 @@ const CategoriesBox: React.FC<CategoryBoxProps> = ({ item, select, setSelect }) 
     }, [select, params, router,])
 
     return (
-        <div className="w-full flex justify-center h-full items-center">
+        <div className="w-full flex justify-center h-full items-center dark:!text-white">
             <button
                 onClick={() => onClick(item)}
                 className={`
-${select === item?.label ? 'bg-primary text-white' : ''}
-flex rounded-full h-[40px]   items-center text-neutral-700 font-light  gap-3 justify-center px-[20px] `}>
+${select === item?.label ? 'bg-primary text-white dark:text-[white] ' : ''}
+flex rounded-full h-[40px] hover:dark:text-white  items-center text-neutral-700 font-light  gap-3 justify-center px-[20px] dark:text-text-dark`}>
                 <item.icon size={25} />
                 <p className='text-sm'>{item.label}</p>
             </button>

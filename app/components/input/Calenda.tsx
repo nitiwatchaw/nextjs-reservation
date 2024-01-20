@@ -15,6 +15,7 @@ interface CalendarProps {
 const Calenda: React.FC<CalendarProps> = ({ value, onChange, disabledDates }) => {
     return (
         <DateRange
+        
             rangeColors={['#34977d']}
             ranges={[value]}
             date={new Date()}
@@ -23,8 +24,8 @@ const Calenda: React.FC<CalendarProps> = ({ value, onChange, disabledDates }) =>
             showDateDisplay={true}
             minDate={new Date()}
             disabledDates={disabledDates}
-       
-        
+
+
         />
     )
 }

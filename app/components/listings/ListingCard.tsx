@@ -69,18 +69,18 @@ const ListingCard: React.FC<ListingCardProps> = async ({ data, currentUser, allU
                         {data.category}
                     </div>
                 </div>
-                <div className="flex flex-col gap-4 flex-1 ">
-                    <div className="flex items-center w-full justify-between mt-3">
+                <div className="flex flex-col gap-4  ">
+                    <div className="flex items-center w-full justify-between mt-3 dark:text-white">
                         <div className="font-extrabold"> {data.title}</div>
 
-                        <div className="font-light text-gray-400 text-xs capitalize">
+                        <div className="font-light text-gray-400 text-xs capitalize dark:text-white">
                             {data.favoriteUserId.length} Like
                         </div>
                     </div>
-                    <div className="text-neutral-500 text-sm flex-1">
+                    <div className="text-neutral-500 text-sm flex-1 dark:text-[#c0c1ce]">
                         {data.description}
                     </div>
-                    <div className={`flex !justify-between text-gray-700  flex-1 items-end ${deletebtn && "!items-start"}`}>
+                    <div className={`flex dark:text-[#c0c1ce] !justify-between text-gray-700  flex-1 items-end ${deletebtn && "!items-start"}`}>
                         <div className="flex items-cennter gap-2 ">
                             <IoBedOutline />
                             <div className="text-xs">
@@ -101,7 +101,7 @@ const ListingCard: React.FC<ListingCardProps> = async ({ data, currentUser, allU
                         </div>
                     </div>
                     {!deletebtn && (
-                        <div className="font-light text-gray-400 text-xs capitalize">by {userName}</div>
+                        <div className="font-light text-gray-400 text-xs capitalize flex-1  !justify-self-end">by {userName}</div>
                     )}
 
                 </div>

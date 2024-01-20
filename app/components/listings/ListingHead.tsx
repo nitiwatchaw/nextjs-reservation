@@ -22,8 +22,8 @@ const ListingHead: React.FC<listingProps> = ({ listing, currentUser }) => {
     return (
         <div className='flex flex-col gap-4'>
             <div className="">
-                <div className="text-xl font-bold">{listing?.title}</div>
-                <div className="font-gray">{location?.region} , {location?.label}</div>
+                <div className="text-xl font-bold dark:text-white">{listing?.title}</div>
+                <div className="font-gray dark:text-[#888aa0] ">{location?.region} , {location?.label}</div>
             </div>
 
             <div className="relative w-full h-[400px] md:h-[800px] rounded-lg">

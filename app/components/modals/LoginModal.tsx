@@ -73,23 +73,23 @@ const LoginModal = () => {
 
     return (
         <div className={`flex justify-center items-center overflow-x-hidden 
-        overflow-y-auto fixed inset-0 outline-none  z-[9999]
+        overflow-y-auto fixed inset-0 outline-none  z-[9999] dark:bg-[#515574]/70 
         focus:outline-none bg-neutral-800/70`}>
             <div className={`
               ${showModal ? ' translate-y-0' : 'translate-y-full'}
               ${showModal ? ' opacity-100' : 'opacity-0'}
-            bg-white relative w-full md:w-4/6 lg:w-3/6 xl:w-2/5 rounded-lg
+            bg-white relative w-full md:w-4/6 lg:w-3/6 xl:w-2/5 rounded-lg dark:bg-[#000f36]
         my-6 mx-auto  lg:h-auto md:h-auto z-50 translate transition duration-300 h-full`}>
                 <div className="text-center relative text-lg flex items-center justify-center h-[80px]">
-                    <button className='absolute left-10 text-2xl font-bold' onClick={handleClose}>x</button>
-                    <div className="text-xl">Login</div>
+                    <button className='absolute left-10 text-2xl font-bold dark:text-[#888aa0]' onClick={handleClose}>x</button>
+                    <div className="text-xl dark:text-white">Login</div>
                 </div>
-                <hr />
+                <hr className='dark:border-[#71778e]' />
                 <div className="p-6 flex flex-col gap-4">
-                    <div className="text-2xl font-bold ">
+                    <div className="text-2xl font-bold dark:text-white">
                         Welcome back to Posh Website
                     </div>
-                    <div className="text-lg font-light">
+                    <div className="text-lg font-light dark:text-[#888aa0]">
                         Login account
                     </div>
                     <div className="flex flex-col gap-4">
@@ -116,15 +116,15 @@ const LoginModal = () => {
                     <button
                         onClick={handleSubmit(onSubmit)}
                         className='mt-10 w-full h-[50px] bg-primary text-white text-xl rounded-md'>Continue</button>
-                    <hr />
+                    <hr className='dark:border-[#71778e]' />
                     <div className="">
                         < div className="flex flex-col gap-4 mt-3" >
-                            <hr />
-                            <button className='flex items-center justify-between px-3 border border-black rounded-md h-[52px] hover:bg-neutral-100'>
+                            <hr className='dark:border-[#71778e]' />
+                            <button className='dark:bg-[#373c5f] dark:text-white flex items-center justify-between px-3 border border-black rounded-md h-[52px] hover:bg-neutral-100'>
                                 <FcGoogle size={28} />
                                 <div className="flex-1" onClick={() => signIn('google')}>Continue with Google</div>
                             </button>
-                            <button className='flex items-center justify-between px-3 border border-black rounded-md h-[52px] hover:bg-neutral-100'>
+                            <button className='dark:bg-[#373c5f] dark:text-white flex items-center justify-between px-3 border border-black rounded-md h-[52px] hover:bg-neutral-100'>
                                 <AiFillGithub size={28} />
                                 <div className="flex-1" onClick={() => signIn('github')}>Continue with Github</div>
                             </button>
@@ -133,7 +133,7 @@ const LoginModal = () => {
                                     <div className=""> First time coming?</div>
                                     <div
                                         onClick={toggle}
-                                        className="text-neutral-800 cursor-pointer hover:underline"> Register</div>
+                                        className="text-neutral-800 cursor-pointer hover:underline dark:text-white"> Register</div>
                                 </div>
                             </div>
                         </ div>

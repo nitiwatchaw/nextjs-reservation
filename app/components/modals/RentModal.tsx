@@ -136,7 +136,7 @@ const RentModal = () => {
                 ))}
             </div>
             <button onClick={onNext}
-                className='mt-10 w-full h-[50px] bg-primary text-white text-xl rounded-md'>Next</button>
+                className='mt-10 w-full h-[50px] bg-primary dark:bg-[#94c5b5] dark:text-[#11171e] text-white text-xl rounded-md'>Next</button>
         </div>
     )
 
@@ -160,9 +160,9 @@ const RentModal = () => {
                 <Map center={location?.latlng} />
                 <div className="flex gap-5">
                     <button onClick={onBack}
-                        className='mt-10 w-full h-[50px] bg-white text-primary border-2 border-primary text-xl rounded-md'>Back</button>
+                        className='dark:bg-[#373c5f] dark:text-white dark:border-[#373c5f]  mt-10 w-full h-[50px] bg-white text-primary border-2 border-primary text-xl rounded-md'>Back</button>
                     <button onClick={onNext}
-                        className='mt-10 w-full h-[50px] bg-primary text-white text-xl rounded-md'>Next</button>
+                        className='dark:bg-[#94c5b5]  dark:text-black mt-10 w-full h-[50px] bg-primary text-white text-xl rounded-md'>Next</button>
                 </div>
             </div>
         )
@@ -183,14 +183,14 @@ const RentModal = () => {
                     value={guestCount}
                     onChange={(value) => setCustomValue('guestCount', value)}
                 />
-                <hr />
+                <hr className='dark:border-[#71778e]'/>
                 <Counter
                     title='Rooms'
                     subtitle='How many rooms do you have?'
                     value={roomCount}
                     onChange={(value) => setCustomValue('roomCount', value)}
                 />
-                <hr />
+                <hr className='dark:border-[#71778e]'/>
                 <Counter
                     title='Bathrooms'
                     subtitle='How many bathrooms do you have?'
@@ -199,9 +199,9 @@ const RentModal = () => {
                 />
                 <div className="flex gap-5">
                     <button onClick={onBack}
-                        className='mt-10 w-full h-[50px] bg-white text-primary border-2 border-primary text-xl rounded-md'>Back</button>
+                        className='dark:bg-[#373c5f] dark:text-white dark:border-[#373c5f] mt-10 w-full h-[50px] bg-white text-primary border-2 border-primary text-xl rounded-md'>Back</button>
                     <button onClick={onNext}
-                        className='mt-10 w-full h-[50px] bg-primary text-white text-xl rounded-md'>Next</button>
+                        className='dark:bg-[#94c5b5]  dark:text-black mt-10 w-full h-[50px] bg-primary text-white text-xl rounded-md'>Next</button>
                 </div>
             </div>
         )
@@ -218,9 +218,9 @@ const RentModal = () => {
                 <ImageUpload value={imageSrc} onChange={((value) => setCustomValue('imageSrc', value))} />
                 <div className="flex gap-5">
                     <button onClick={onBack}
-                        className='mt-10 w-full h-[50px] bg-white text-primary border-2 border-primary text-xl rounded-md'>Back</button>
+                        className='dark:bg-[#373c5f] dark:text-white dark:border-[#373c5f] mt-10 w-full h-[50px] bg-white text-primary border-2 border-primary text-xl rounded-md'>Back</button>
                     <button onClick={onNext}
-                        className='mt-10 w-full h-[50px] bg-primary text-white text-xl rounded-md'>Next</button>
+                        className='dark:bg-[#94c5b5]  dark:text-black mt-10 w-full h-[50px] bg-primary text-white text-xl rounded-md'>Next</button>
                 </div>
             </div>
         )
@@ -242,7 +242,7 @@ const RentModal = () => {
                     errors={errors}
                     required
                 />
-                <hr />
+                <hr className='dark:border-[#71778e]'/>
                 <Input
                     id='description'
                     label='Description'
@@ -253,9 +253,9 @@ const RentModal = () => {
                 />
                 <div className="flex gap-5">
                     <button onClick={onBack}
-                        className='mt-10 w-full h-[50px] bg-white text-primary border-2 border-primary text-xl rounded-md'>Back</button>
+                        className='dark:bg-[#373c5f] dark:text-white dark:border-[#373c5f] mt-10 w-full h-[50px] bg-white text-primary border-2 border-primary text-xl rounded-md'>Back</button>
                     <button onClick={onNext}
-                        className='mt-10 w-full h-[50px] bg-primary text-white text-xl rounded-md'>Next</button>
+                        className='dark:bg-[#94c5b5]  dark:text-black mt-10 w-full h-[50px] bg-primary text-white text-xl rounded-md'>Next</button>
                 </div>
             </div>
         )
@@ -280,9 +280,9 @@ const RentModal = () => {
                 />
                 <div className="flex gap-5">
                     <button onClick={onBack}
-                        className='mt-10 w-full h-[50px] bg-white text-primary border-2 border-primary text-xl rounded-md'>Back</button>
+                        className='dark:bg-[#373c5f] dark:text-white dark:border-[#373c5f] mt-10 w-full h-[50px] bg-white text-primary border-2 border-primary text-xl rounded-md'>Back</button>
                     <button disabled={isLoading} onClick={handleSubmit(onSubmit)}
-                        className='mt-10 w-full h-[50px] bg-primary text-white text-xl rounded-md disabled:bg-primary/70 disabled:cursor-wait'>Create</button>
+                        className='dark:bg-[#94c5b5]  dark:text-black mt-10 w-full h-[50px] bg-primary text-white text-xl rounded-md disabled:bg-primary/70 disabled:cursor-wait'>Create</button>
                 </div>
 
             </div>
@@ -299,17 +299,17 @@ const RentModal = () => {
     return (
         <div className={`flex justify-center items-center overflow-x-hidden 
         overflow-y-auto fixed inset-0 outline-none  z-[9999]
-        focus:outline-none bg-neutral-800/70`}>
+        focus:outline-none bg-neutral-800/70 dark:bg-[#515574]/70`}>
             <div className={`
               ${showModal ? ' translate-y-0' : 'translate-y-full'}
               ${showModal ? ' opacity-100' : 'opacity-0'}
-            bg-white relative w-full md:w-4/6 lg:w-3/6 xl:w-2/5 rounded-lg
+            bg-white relative w-full md:w-4/6 lg:w-3/6 xl:w-2/5 rounded-lg dark:bg-[#000f36]
         my-6 mx-auto  lg:h-auto md:h-auto z-50 translate transition duration-300 h-full`}>
                 <div className="text-center relative text-lg flex items-center justify-center h-[80px]">
-                    <button className='absolute left-10 text-2xl font-bold' onClick={handleClose}>x</button>
-                    <div className="text-xl">Create Property</div>
+                    <button className='absolute left-10 text-2xl font-bold dark:text-[#888aa0]' onClick={handleClose}>x</button>
+                    <div className="text-xl dark:text-white">Create Property</div>
                 </div>
-                <hr />
+                <hr className='dark:border-[#71778e]'/>
                 <div className="p-6">
                     {bodyContent}
                 </div>

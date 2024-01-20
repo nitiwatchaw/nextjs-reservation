@@ -69,18 +69,18 @@ const MenuSearch = () => {
     return (
         <div className='flex item-center flex-col gap-6 md:flex-row'>
             <div onClick={searchModal.onOpen}
-                className='flex items-center border-neutral-200  border-[2px] py-1 px-6 gap-6 rounded-full cursor-pointer hover:shadow-md'>
+                className='flex items-center border-neutral-200 dark:border-gray-500 border-[2px] py-1 px-6 gap-6 rounded-full cursor-pointer hover:shadow-md'>
 
                 <div className="flex items-center gap-2 ">
                     <FaRegMap className='text-md hidden sm:block' />
                     <div className="text-sm font-semibold">{locationLabel}</div>
                 </div>
-                <div className="border-[1px] border-black  h-5"></div>
+                <div className="border-[1px] border-black dark:border-gray-500 b  h-5"></div>
                 <div className="flex items-center gap-2 ">
                     <VscCalendar className='text-md hidden sm:block' />
                     <div className="text-sm  font-semibold">{durationLabel}</div>
                 </div>
-                <div className="border-[1px] border-black h-5"></div>
+                <div className="border-[1px] border-black dark:border-gray-500 b h-5"></div>
                 <div className="flex items-center gap-2 ">
                     <FaRegUser className='text-md hidden sm:block' />
                     <div className="text-sm  font-semibold">{guestLabel}</div>
@@ -93,7 +93,7 @@ const MenuSearch = () => {
             </div>
             {haveSearch && (
                 <div onClick={() => router.push('/')} className="  flex items-center justify-center    ">
-                    <button className='h-[35px] text-sm bg-neutral-200 rounded-full w-16 font-bold '>Clear</button>
+                    <button className='h-[35px] text-sm bg-neutral-200  dark:bg-primary-dark dark:border-gray-500 dark:border-2  rounded-full w-16 font-bold '>Clear</button>
                 </div>
             )}
 

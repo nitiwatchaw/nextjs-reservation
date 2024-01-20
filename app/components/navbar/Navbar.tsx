@@ -18,7 +18,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
     return (
         <>
             <Profile currentUser={currentUser} />
-            <div className='flex items-center gap-5 md:gap-0 border-b-2 py-6 border-neutral-200  justify-between  md:mb-0 flex-col md:flex-row md:mt-0'>
+            <div className='dark:text-white flex items-center gap-5 md:gap-0 border-b-2 py-6 border-neutral-200 dark:border-bor-dark   justify-between  md:mb-0 flex-col md:flex-row md:mt-0'>
                 <Logo />
                 <MenuSearch />
                 <UserMenu currentUser={currentUser} />

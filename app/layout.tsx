@@ -35,9 +35,9 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={`${confotaa.className} `}>
+      <body className={`${confotaa.className} min-h-screen  dark:bg-[#333333]`}>
 
-        <div className="px-6">
+        <div className="dark:bg-primary-dark px-6 min-h-screen">
           <ClientOnly >
 
             <Navbar currentUser={currentUser} />
@@ -45,11 +45,11 @@ export default async function RootLayout({
             <SearchModal />
             <LoginModal />
             <RentModal />
- 
+
             <ToasterProvider />
           </ClientOnly>
 
-          <div className="pb-20 pt-16">
+          <div className=" pb-20 pt-16">
             {children}
           </div>
 

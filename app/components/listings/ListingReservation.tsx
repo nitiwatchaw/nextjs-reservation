@@ -21,8 +21,8 @@ const ListingReservation: React.FC<listingProps> = ({ listing, currentUser, onCh
 
 
     return (
-        <div className='bg-neutral-100 p-5'>
-            <div className="text-lg font-bold mb-6">
+        <div className='bg-neutral-100 p-5 dark:bg-[#373c5f]'>
+            <div className="text-lg font-bold mb-6 dark:text-white">
                 ${listing.price} / night
             </div>
             <Calendar
@@ -38,8 +38,8 @@ const ListingReservation: React.FC<listingProps> = ({ listing, currentUser, onCh
             </button>
             <div className="flex justify-between w-full mt-6 ">
 
-                <div className="">Total</div>
-                <div className="underline font-bold">$ {totalPrice}</div>
+                <div className="dark:text-white">Total</div>
+                <div className="underline font-bold dark:text-white">$ {totalPrice}</div>
             </div>
         </div>
     )

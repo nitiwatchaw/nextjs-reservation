@@ -195,14 +195,14 @@ const UpdateModal: React.FC<UpdateModalProps> = ({ currentUser, listing }) => {
                     value={guestCount}
                     onChange={(value) => setCustomValue('guestCount', value)}
                 />
-                <hr />
+                <hr className='dark:border-[#71778e]'/>
                 <Counter
                     title='Rooms'
                     subtitle='How many rooms do you have?'
                     value={roomCount}
                     onChange={(value) => setCustomValue('roomCount', value)}
                 />
-                <hr />
+                <hr className='dark:border-[#71778e]'/>
                 <Counter
                     title='Bathrooms'
                     subtitle='How many bathrooms do you have?'
@@ -254,7 +254,7 @@ const UpdateModal: React.FC<UpdateModalProps> = ({ currentUser, listing }) => {
                     errors={errors}
                     required
                 />
-                <hr />
+                <hr className='dark:border-[#71778e]'/>
                 <Input
                     id='description'
                     label='Description'
@@ -321,7 +321,7 @@ const UpdateModal: React.FC<UpdateModalProps> = ({ currentUser, listing }) => {
                     <button className='absolute left-10 text-2xl font-bold' onClick={handleClose}>x</button>
                     <div className="text-xl">Update Property</div>
                 </div>
-                <hr />
+                <hr className='dark:border-[#71778e]'/>
                 <div className="p-6 flex flex-col gap-4">
                     <div className="text-2xl font-bold ">
                         Let us know how your property is go far

@@ -181,7 +181,7 @@ const ListingSinglePage: React.FC<listingProps> = ({ listing, currentUser, reser
                         </div>
 
                         <div className="flex gap-3 items-center justify-between">
-                            <div className="font-bold text-lg">
+                            <div className="font-bold text-lg dark:text-white">
                                 Users Love this place ({listing?.favoriteUserId?.length})
                             </div>
                             <div className="flex ">
@@ -210,7 +210,7 @@ const ListingSinglePage: React.FC<listingProps> = ({ listing, currentUser, reser
                                 type="text"
 
                                 placeholder='what do you thinks about this place...'
-                                className='bg-neutral-50 h-[40px] p-6 rounded-sm placeholder:text-sm '
+                                className='dark:bg-[#1d254a] dark:text-white bg-neutral-50 h-[40px] p-6 rounded-sm placeholder:text-sm '
                                 onChange={(e) => setComment(e.target.value)}
                             />
                             <button
@@ -226,7 +226,7 @@ const ListingSinglePage: React.FC<listingProps> = ({ listing, currentUser, reser
                             currentUser={currentUser}
                             listing={listing}
                             commentData={commentData}
-                        /> : <div className=''>No comment </div>}
+                        /> : <div className='dark:text-[#888aa0]'>No comment </div>}
 
 
 

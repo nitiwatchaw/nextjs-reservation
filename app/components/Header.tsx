@@ -9,10 +9,10 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ title, desc, center }) => {
     return (
         <div className={`${center ? "text-center" : ""}`}>
-            <div className="text-xl font-bold">
+            <div className="text-xl font-bold dark:text-white">
                 {title}
             </div>
-            <div className="text-light text-neutral-800 mt-2">
+            <div className="text-light text-neutral-800 mt-2 dark:text-text-dark">
                 {desc}
             </div>
         </div>

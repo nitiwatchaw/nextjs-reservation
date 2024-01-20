@@ -29,7 +29,7 @@ const ListingInfo: React.FC<listingProps> = ({ listing, currentUser }) => {
         <div className='flex flex-col gap-10 flex-1'>
             <div className="flex flex-col gap-2">
                 <div className="flex gap-5 items-center">
-                    <div className="capitalize font-semibold  text-lg">Hosted by {listing?.user?.name || 'Unknown User'}</div>
+                    <div className="capitalize font-semibold  text-lg dark:text-white">Hosted by {listing?.user?.name || 'Unknown User'}</div>
                     <div className="relative rounded-full w-10 h-10">
                         <Image
                             fill
@@ -39,7 +39,7 @@ const ListingInfo: React.FC<listingProps> = ({ listing, currentUser }) => {
                         />
                     </div>
                 </div>
-                <div className="flex items-center gap-4  ">
+                <div className="flex items-center gap-4 dark:text-[#dcdde0] ">
                     <div className="font-light text-md text-neutral-400">{listing?.guestCount} guests</div>
                     <div className="font-light text-md text-neutral-400">{listing?.roomCount} rooms</div>
                     <div className="font-light text-md text-neutral-400">{listing?.bathroomCount} bathrooms</div>
@@ -52,7 +52,7 @@ const ListingInfo: React.FC<listingProps> = ({ listing, currentUser }) => {
                 icon={categoryMatch?.icon}
             />
             <div className='flex flex-col gap-6 !border-b border-neutral-200 pb-9'>
-                <div className="">
+                <div className="dark:text-[#b8b9c7]">
                     {listing.description}
                 </div>
             </div>

@@ -140,9 +140,9 @@ const SearchModal = () => {
                 value={locaiton}
                 onChange={(value) => setLocation(value as CountrySelectValue)}
             />
-            <hr />
+            <hr className='dark:border-[#71778e]'/>
             <Map center={locaiton?.latlng} />
-            <button onClick={onNext} className='mt-10 w-full h-[50px] bg-primary text-white text-xl rounded-md'>
+            <button onClick={onNext} className='mt-10 w-full h-[50px] bg-primary dark:bg-[#94c5b5] dark:text-[#11171e] text-white text-xl rounded-md'>
                 Next
             </button>
         </div>
@@ -161,10 +161,10 @@ const SearchModal = () => {
                     onChange={(value) => setDateRange(value.selection)}
                 />
                 <div className="flex gap-2">
-                    <button onClick={onBack} className='mt-10 w-full h-[50px] bg-white text-primary border-primary border-2 text-xl rounded-md'>
+                    <button onClick={onBack} className='mt-10 w-full dark:bg-[#373c5f] dark:text-white dark:border-[#373c5f] h-[50px] bg-white text-primary border-primary border-2 text-xl rounded-md'>
                         Back
                     </button>
-                    <button onClick={onNext} className='mt-10 w-full h-[50px] bg-primary text-white text-xl rounded-md'>
+                    <button onClick={onNext} className='mt-10 w-full h-[50px] bg-primary dark:bg-[#94c5b5]  dark:text-black text-white text-xl rounded-md'>
                         Next
                     </button>
                 </div>
@@ -199,10 +199,10 @@ const SearchModal = () => {
                 />
 
                 <div className="flex gap-2">
-                    <button onClick={onBack} className='mt-10 w-full h-[50px] bg-white text-primary border-primary border-2 text-xl rounded-md'>
+                    <button onClick={onBack} className='mt-10 w-full h-[50px] dark:bg-[#373c5f] dark:text-white dark:border-[#373c5f] bg-white text-primary border-primary border-2 text-xl rounded-md'>
                         Back
                     </button>
-                    <button onClick={onSubmit} className='mt-10 w-full h-[50px] bg-primary text-white text-xl rounded-md'>
+                    <button onClick={onSubmit} className='mt-10 w-full h-[50px] bg-primary dark:bg-[#94c5b5]  dark:text-black text-white text-xl rounded-md'>
                         Search
                     </button>
                 </div>
@@ -214,17 +214,17 @@ const SearchModal = () => {
     return (
         <div className={`flex justify-center items-center overflow-x-hidden 
         overflow-y-auto fixed inset-0 outline-none  z-[9999]
-        focus:outline-none bg-neutral-800/70`}>
+        focus:outline-none bg-neutral-800/70 dark:bg-[#515574]/70 `}>
             <div className={`
               ${showModal ? ' translate-y-0' : 'translate-y-full'}
               ${showModal ? ' opacity-100' : 'opacity-0'}
-            bg-white relative w-full md:w-4/6 lg:w-3/6 xl:w-2/5 rounded-lg
+            bg-white relative w-full md:w-4/6 lg:w-3/6 xl:w-2/5 rounded-lg dark:bg-[#000f36]
         my-6 mx-auto  lg:h-auto md:h-auto z-50 translate transition duration-300 h-full`}>
                 <div className="text-center relative text-lg flex items-center justify-center h-[80px]">
-                    <button className='absolute left-10 text-2xl font-bold' onClick={handleClose}>x</button>
-                    <div className="text-xl">Filter</div>
+                    <button className='absolute left-10 text-2xl font-bold dark:text-[#888aa0]' onClick={handleClose}>x</button>
+                    <div className="text-xl dark:text-white">Filter</div>
                 </div>
-                <hr />
+                <hr className='dark:border-[#71778e]'/>
 
                 <div className="p-6">
                     {bodyContent}

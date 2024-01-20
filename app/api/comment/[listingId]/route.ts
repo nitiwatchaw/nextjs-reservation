@@ -63,3 +63,34 @@ export async function DELETE(request: Request, { params }: { params: IParams }) 
     }
 
 }
+
+export async function PUT(request: Request, { params }: { params: IParams }) {
+    const currentUser = await getCurrentUser();
+
+    if (!currentUser) {
+        return NextResponse.error();
+    }
+
+    const { listingId } = params;
+
+    const requestBody = await request.json();
+
+    const { commentBody } = requestBody;
+
+
+    try {
+        const updateComment = await prisma.comment.update({
+            where: {
+                id: listingId
+            },
+            data: {
+                commentBody: commentBody
+            }
+        });
+
+        return NextResponse.json(updateComment);
+    } catch (error) {
+        console.error("Error deleting comment:", error);
+        return NextResponse.error();
+    }
+}

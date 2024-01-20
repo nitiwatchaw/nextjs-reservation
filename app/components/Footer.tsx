@@ -2,7 +2,7 @@ import React from 'react'
 import { MdHotelClass } from "react-icons/md";
 const Footer = () => {
     return (
-        <div className='p-20 bg-gray-50'>
+        <div className='p-20 bg-gray-50 dark:bg-[#1d254a] dark:text-white'>
             <div className="flex gap-20 items-center lg:justify-center flex-wrap ">
                 <div className="hidden md:block">
                     <MdHotelClass size={40} />

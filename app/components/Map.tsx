@@ -29,7 +29,7 @@ const Map: React.FC<MapProps> = ({ center }) => {
             zoom={center ? 4 : 2}
             scrollWheelZoom={true}
             fadeAnimation={true}
-            className='h-[35vh] rounded-lg '
+            className='h-[35vh] rounded-lg dark:bg-[#000f36] '
         >
             <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

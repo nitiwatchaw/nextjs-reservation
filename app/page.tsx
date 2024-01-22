@@ -10,11 +10,13 @@ import { Suspense } from 'react';
 import SkeletionSingleLoader from './components/SkeletionSingleLoader';
 
 
+
+
 interface HomeProps {
   searchParams: IListingsParams;
 }
 
-
+export const dynamic = 'auto';
 
 export default async function Home({ searchParams }: HomeProps) {
   const listings = await getListing(searchParams);
